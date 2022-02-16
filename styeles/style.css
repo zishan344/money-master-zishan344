@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+body {
+  font-family: "Roboto", sans-serif;
+}
+.save {
+  width: 132px;
+  height: 44px;
+  border: none;
+  background: #dcdcdc;
+  border-radius: 2px;
+}
+.input-field {
+  width: 229px;
+  border: none;
+  height: 44px;
+  background: #dcdcdc;
+  border-radius: 2px;
+}
