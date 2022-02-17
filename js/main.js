@@ -1,10 +1,6 @@
 function getInput(idInput) {
   const inputValue = document.getElementById(idInput).value;
-  if (inputValue < 0) {
-    alert("don't writing a negative number");
-  } else {
-    return parseFloat(inputValue);
-  }
+  return parseFloat(inputValue);
 }
 document
   .getElementById("calcalute-salary")
@@ -19,8 +15,10 @@ document
     const clothes = getInput("clothes");
     // update total amount
     const amount = food + rent + clothes;
-    if (amount > income) {
+    if (isNaN(amount) || amount > income) {
       alert("you have note enough amount");
+    } else if (income < 0 || food < 0 || rent < 0 || clothes < 0) {
+      alert("enter a valid input");
     } else {
       const expence = document.getElementById("expence");
       expence.innerText = amount;
@@ -37,10 +35,8 @@ document.getElementById("saving").addEventListener("click", function () {
   const parsent = (income * parsentInput) / 100;
   const savings = document.getElementById("saving-amount");
   const remaining = document.getElementById("remaining-balance");
-  if (parsent > parseFloat(balance.innerText)) {
+  if (isNaN(parsentInput) || parsent > parseFloat(balance.innerText)) {
     alert("you have not enough money for savings");
-  } else if (isNaN(parsent) || isNaN(remaining) || isNaN(savings)) {
-    alert("enter a valid input");
   } else {
     savings.innerText = parsent;
     remaining.innerText =
