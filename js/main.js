@@ -37,6 +37,8 @@ document.getElementById("saving").addEventListener("click", function () {
   const remaining = document.getElementById("remaining-balance");
   if (isNaN(parsentInput) || parsent > parseFloat(balance.innerText)) {
     alert("you have not enough money for savings");
+  } else if (parsentInput < 0) {
+    alert("don't write a nagative value");
   } else {
     savings.innerText = parsent;
     remaining.innerText =
